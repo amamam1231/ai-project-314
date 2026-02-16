@@ -3,22 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import {
-  Mountain,
-  TreePine,
-  MapPin,
-  Phone,
-  MessageCircle,
-  Home,
-  TrendingUp,
-  Wind,
-  Snowflake,
-  Road,
-  Zap,
-  Droplets,
-  ChevronRight,
-  CheckCircle2
-} from 'lucide-react'
 
 // Clean Map Component
 const CleanMap = ({ coordinates = [24.8468, 48.3134], zoom = 10 }) => {
@@ -113,18 +97,18 @@ const PlotCard = ({ size, price, features, image }) => (
     </div>
     <div className="p-6">
       <h3 className="text-2xl font-bold text-amber-900 mb-2 font-serif">{size}</h3>
-      <p className="text-amber-700 mb-4 font-medium">Під будівництво з комунікаціями</p>
+      <p className="text-amber-700 mb-4 font-medium">Під будівництво з перспективою комунікацій</p>
       <ul className="space-y-2">
         {features.map((feature, idx) => (
           <li key={idx} className="flex items-center gap-2 text-amber-800">
-            <SafeIcon name="checkCircle2" size={18} className="text-green-600 flex-shrink-0" />
+            <SafeIcon name="check-circle-2" size={18} className="text-green-600 flex-shrink-0" />
             <span className="text-sm">{feature}</span>
           </li>
         ))}
       </ul>
       <button className="w-full mt-6 wood-button text-amber-100 py-3 rounded-lg font-bold transition-all flex items-center justify-center gap-2">
         Детальніше
-        <SafeIcon name="chevronRight" size={18} />
+        <SafeIcon name="chevron-right" size={18} />
       </button>
     </div>
   </motion.div>
@@ -151,25 +135,25 @@ function App() {
     {
       size: '20 соток',
       price: '$15,000',
-      features: ['Гірський пейзаж', 'Асфальтований підїзд', 'Електрика поруч'],
+      features: ['Гірський пейзаж', 'Грунтова дорога', 'Електрика поруч'],
       image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80'
     },
     {
       size: '40 соток',
       price: '$28,000',
-      features: ['Панорамний вид', 'Річка поруч', 'Газифікація', 'Лісова зона'],
+      features: ['Панорамний вид', 'Річка поруч', 'Лісова зона', 'Місце для котеджу'],
       image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80'
     },
     {
       size: '60 соток',
       price: '$42,000',
-      features: ['Ідеально для котеджу', 'Всі комунікації', 'Огороджена територія'],
+      features: ['Ідеально для котеджу', 'Електрика поруч', 'Огороджена територія'],
       image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80'
     },
     {
       size: '80 соток',
       price: '$55,000',
-      features: ['VIP локація', 'Приватна дорога', 'Власне джерело', 'Повний пакет документів'],
+      features: ['VIP локація', 'Приватна грунтова дорога', 'Власне джерело', 'Повний пакет документів'],
       image: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80'
     }
   ]
@@ -187,23 +171,23 @@ function App() {
     },
     {
       icon: 'road',
-      title: 'Розвинена інфраструктура',
-      description: 'Асфальтовані дороги, магазини, школи, лікарні, ресторани традиційної гуцульської кухні.'
+      title: 'Природні шляхи',
+      description: 'Грунтові дороги, які зберігають первісну красу природи. Тихий спокій без шуму асфальту та міста.'
     },
     {
-      icon: 'treePine',
+      icon: 'tree-pine',
       title: 'Неповторна природа',
       description: 'Гори, ліси, річки та водоспади. Мальовничі краєвиди, які надихають та дарують спокій.'
     },
     {
       icon: 'zap',
-      title: 'Комунальні мережі',
-      description: 'Активне підведення електроенергії, газу та водопостачання до нових ділянок.'
+      title: 'Електропостачання',
+      description: 'Лінії електропередач вздовж ділянок. Потужність до 15 кВт. Автономне опалення та альтернативні джерела енергії.'
     },
     {
-      icon: 'trendingUp',
+      icon: 'trending-up',
       title: 'Інвестиційний потенціал',
-      description: 'Зростання вартості землі 15-20% щорічно. Попит на туристичне житло постійно зростає.'
+      description: 'Зростання вартості землі 15-20% щорічно. Перспектива підведення комунікацій у майбутньому.'
     }
   ]
 
@@ -272,7 +256,7 @@ function App() {
       <section className="relative pt-24 md:pt-32 min-h-screen flex items-center">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&q=80"
+            src="https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_1112963888/edit-photo-1771257188-6811.jpg?"
             alt="Карпатські гори"
             className="w-full h-full object-cover"
           />
@@ -287,7 +271,7 @@ function App() {
             className="max-w-4xl"
           >
             <div className="inline-flex items-center gap-2 bg-amber-100/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-amber-200/30">
-              <SafeIcon name="mapPin" size={18} className="text-amber-300" />
+              <SafeIcon name="map-pin" size={18} className="text-amber-300" />
               <span className="text-amber-100 text-sm md:text-base">Косівський та Верховинський райони</span>
             </div>
 
@@ -297,7 +281,7 @@ function App() {
 
             <p className="text-lg md:text-2xl text-amber-100 mb-8 leading-relaxed max-w-2xl">
               Земельні ділянки від 20 до 80 соток з перспективою будівництва.
-              Екологічна чистота, гірські пейзажі та розвинена інфраструктура.
+              Екологічна чистота, гірські пейзажі та первісна природа без асфальту.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -306,7 +290,7 @@ function App() {
                 className="wood-button text-amber-100 px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center gap-2"
               >
                 Обрати ділянку
-                <SafeIcon name="chevronRight" size={20} />
+                <SafeIcon name="chevron-right" size={20} />
               </button>
               <button
                 onClick={() => scrollToSection('contacts')}
@@ -318,19 +302,39 @@ function App() {
 
             <div className="flex flex-wrap gap-6 mt-12">
               <div className="flex items-center gap-2 text-amber-200">
-                <SafeIcon name="checkCircle2" size={20} />
+                <SafeIcon name="check-circle-2" size={20} />
                 <span className="text-sm md:text-base">Перевірені ділянки</span>
               </div>
               <div className="flex items-center gap-2 text-amber-200">
-                <SafeIcon name="checkCircle2" size={20} />
+                <SafeIcon name="check-circle-2" size={20} />
                 <span className="text-sm md:text-base">Повний пакет документів</span>
               </div>
               <div className="flex items-center gap-2 text-amber-200">
-                <SafeIcon name="checkCircle2" size={20} />
+                <SafeIcon name="check-circle-2" size={20} />
                 <span className="text-sm md:text-base">Розстрочка 0%</span>
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Important Notice Section */}
+      <section className="py-8 px-4 md:px-6 bg-red-50 border-y-2 border-red-200">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-md border border-red-100">
+            <div className="bg-red-100 p-3 rounded-full flex-shrink-0">
+              <SafeIcon name="alert-circle" size={28} className="text-red-600" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-red-900 mb-2">Важлива інформація</h3>
+              <p className="text-red-800 leading-relaxed">
+                На даний момент до ділянок <strong>відсутні магістральний газ та асфальтовані дороги</strong>.
+                Ділянки мають грунтовий під'їзд. Підведення комунікацій планується у 2026-2027 роках.
+                Рекомендуємо використовувати автономні системи опалення (газгольдери, твердопаливні котли,
+                електроопалення) та підготувати транспорт для грунтових доріг.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -344,7 +348,7 @@ function App() {
               </h2>
               <p className="text-lg md:text-xl text-amber-800 max-w-3xl mx-auto">
                 Участки під будівництво від 20 до 80 соток у наймальовничіших куточках Карпат.
-                Перспектива підведення комунікацій.
+                Перспектива підведення комунікацій у майбутньому.
               </p>
             </div>
           </AnimatedSection>
@@ -398,7 +402,7 @@ function App() {
               </h2>
               <p className="text-lg text-amber-200 mb-8 leading-relaxed">
                 Всі ділянки мають статус земель житлової та громадської забудови.
-                Активно проводиться підведення комунікацій до нових масивів.
+                Перспектива підведення комунікацій запланована на 2026-2027 роки.
               </p>
 
               <div className="space-y-6">
@@ -418,7 +422,7 @@ function App() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-amber-100 mb-2">Водопостачання</h3>
-                    <p className="text-amber-200">Центральне водопостачання та можливість свердловин. Чиста гірська вода.</p>
+                    <p className="text-amber-200">Можливість свердловин (60-80 метрів) або колодязів. Чиста гірська вода.</p>
                   </div>
                 </div>
 
@@ -427,8 +431,18 @@ function App() {
                     <SafeIcon name="home" size={24} className="text-amber-800" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-amber-100 mb-2">Газифікація</h3>
-                    <p className="text-amber-200">Планове підведення газу до 2026 року. Альтернатива — твердопаливні котли.</p>
+                    <h3 className="text-xl font-bold text-amber-100 mb-2">Автономне опалення</h3>
+                    <p className="text-amber-200">На даний момент газ відсутній. Рекомендуємо газгольдери, теплові помпи або твердопаливні котли. Планове підведення газу до 2027 року.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-amber-100 p-3 rounded-lg flex-shrink-0">
+                    <SafeIcon name="road" size={24} className="text-amber-800" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-amber-100 mb-2">Дороги</h3>
+                    <p className="text-amber-200">Наразі грунтові під'їзди. Асфальт планується у 2026-2027 роках. Рекомендується автомобіль з підвищеною прохідністю.</p>
                   </div>
                 </div>
               </div>
@@ -437,23 +451,23 @@ function App() {
             <AnimatedSection>
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&q=80"
-                  alt="Будівництво в Карпатах"
+                  src="https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_1112963888/edit-photo-1771257188-6811.jpg?"
+                  alt="Карпатський пейзаж - ділянка"
                   className="rounded-2xl shadow-2xl w-full h-48 md:h-64 object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&q=80"
-                  alt="Котедж в горах"
+                  src="https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_1112963888/edit-photo-1771257189-6203.jpg?"
+                  alt="Лісова стежка"
                   className="rounded-2xl shadow-2xl w-full h-48 md:h-64 object-cover mt-8"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=80"
-                  alt="Дерев'яний будинок"
+                  src="https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_1112963888/edit-photo-1771257189-4830.jpg?"
+                  alt="Лісова поляна"
                   className="rounded-2xl shadow-2xl w-full h-48 md:h-64 object-cover"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80"
-                  alt="Сучасний котедж"
+                  src="https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_1112963888/edit-photo-1771257188-6811.jpg?"
+                  alt="Карпатський краєвид"
                   className="rounded-2xl shadow-2xl w-full h-48 md:h-64 object-cover mt-8"
                 />
               </div>
@@ -483,17 +497,17 @@ function App() {
           <AnimatedSection>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div className="bg-white p-6 rounded-xl shadow-md border border-amber-200 text-center">
-                <SafeIcon name="mapPin" size={32} className="text-amber-700 mx-auto mb-3" />
+                <SafeIcon name="map-pin" size={32} className="text-amber-700 mx-auto mb-3" />
                 <h3 className="font-bold text-amber-900 mb-1">До Буковелю</h3>
                 <p className="text-amber-700">45 км (45 хв)</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-md border border-amber-200 text-center">
-                <SafeIcon name="mapPin" size={32} className="text-amber-700 mx-auto mb-3" />
+                <SafeIcon name="map-pin" size={32} className="text-amber-700 mx-auto mb-3" />
                 <h3 className="font-bold text-amber-900 mb-1">До Івано-Франківська</h3>
                 <p className="text-amber-700">95 км (1.5 год)</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-md border border-amber-200 text-center">
-                <SafeIcon name="mapPin" size={32} className="text-amber-700 mx-auto mb-3" />
+                <SafeIcon name="map-pin" size={32} className="text-amber-700 mx-auto mb-3" />
                 <h3 className="font-bold text-amber-900 mb-1">До Львова</h3>
                 <p className="text-amber-700">180 км (2.5 год)</p>
               </div>
@@ -540,7 +554,7 @@ function App() {
                   className="flex items-center gap-4 bg-green-700 hover:bg-green-600 text-white p-6 rounded-xl transition-all transform hover:scale-105"
                 >
                   <div className="bg-white p-3 rounded-full">
-                    <SafeIcon name="messageCircle" size={28} className="text-green-700" />
+                    <SafeIcon name="message-circle" size={28} className="text-green-700" />
                   </div>
                   <div>
                     <p className="text-sm opacity-80">WhatsApp</p>
@@ -595,11 +609,11 @@ function App() {
                   <span>+38 (050) 123-45-67</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <SafeIcon name="messageCircle" size={16} />
+                  <SafeIcon name="message-circle" size={16} />
                   <span>WhatsApp</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <SafeIcon name="mapPin" size={16} />
+                  <SafeIcon name="map-pin" size={16} />
                   <span>м. Косів, Івано-Франківська обл.</span>
                 </li>
               </ul>
