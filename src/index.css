@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Carpathian wooden texture effects */
+@layer components {
+  .wood-texture {
+    background: linear-gradient(180deg, #8B4513 0%, #654321 50%, #5D3A1A 100%);
+  }
+
+  .wood-border {
+    border: 3px solid #8B4513;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.3), 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .wood-card {
+    background: linear-gradient(135deg, #F5F5DC 0%, #E8DCC4 100%);
+    border: 2px solid #8B4513;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+  }
+
+  .wood-button {
+    background: linear-gradient(180deg, #8B4513 0%, #654321 100%);
+    border: 2px solid #5D3A1A;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
+  .wood-button:hover {
+    background: linear-gradient(180deg, #A0522D 0%, #8B4513 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  }
+
+  .telegram-safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 80px);
+  }
+}
+
+/* Mobile optimizations */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* MapLibre custom styles */
+.maplibregl-ctrl-attrib {
+  display: none !important;
+}
+
+.maplibregl-ctrl-logo {
+  display: none !important;
+}
+
+.maplibregl-compact {
+  display: none !important;
+}
+
+.custom-map-marker {
+  width: 32px;
+  height: 32px;
+  background: #8B4513;
+  border-radius: 50%;
+  border: 4px solid #F5F5DC;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.custom-map-marker:hover {
+  transform: scale(1.1);
+}
